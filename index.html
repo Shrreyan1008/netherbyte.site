@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reliable hosting for gamers and developers by NetherByte Services - VPS, Dedicated, VDS, and Minecraft hosting">
+    <meta name="keywords" content="VPS hosting, Minecraft hosting, dedicated servers, VDS hosting, DDoS protection, NetherByte, hosting solutions">
+    <meta name="author" content="NetherByte Services">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="NetherByte Services - High-Performance Hosting Solutions">
+    <meta property="og:description" content="Discover reliable VPS, Dedicated Servers, VDS, and Minecraft hosting for gamers and developers with NetherByte Services.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.netherbyte.site">
+    <meta property="og:image" content="https://www.netherbyte.site/images/og-image.jpg">
+    <meta property="og:site_name" content="NetherByte Services">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NetherByte Services - Hosting Solutions">
+    <meta name="twitter:description" content="Reliable VPS, Dedicated Servers, VDS, and Minecraft hosting for your business and gaming needs.">
+    <meta name="twitter:image" content="https://www.netherbyte.site/images/og-image.jpg">
+    <title>NetherByte Services - High-Performance Hosting Solutions</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fff;
+            color: #000;
+            line-height: 1.5;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .top-bar {
+            background: #123;
+            color: #fff;
+            padding: 0.5rem 0;
+            font-size: 0.85rem;
+        }
+        
+        .top-bar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+        
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
+        
+        nav {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #7c3aed;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 0;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links li a {
+            color: #000;
+            text-decoration: none;
+            padding: 1.5rem 1.2rem;
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .nav-links li a:hover {
+            background: #f5f5f5;
+        }
+        
+        .nav-cta {
+            background: #7c3aed;
+            color: #fff !important;
+            padding: 0.6rem 1.5rem !important;
+            border-radius: 4px;
+            margin-left: 1rem;
+        }
+        
+        .nav-cta:hover {
+            background: #6d28d9 !important;
+        }
+        
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-width: 200px;
+            z-index: 100;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInDropdown 0.3s ease forwards;
+        }
+        
+        .nav-links li:hover .dropdown,
+        .nav-links li:focus-within .dropdown {
+            display: block;
+        }
+        
+        .dropdown li {
+            position: relative;
+        }
+        
+        .dropdown li a {
+            padding: 0.8rem 1.2rem;
+            display: block;
+            font-size: 0.9rem;
+            color: #000;
+        }
+        
+        .dropdown li a:hover {
+            background: #f5f5f5;
+        }
+        
+        .sub-dropdown {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-width: 180px;
+            z-index: 100;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInDropdown 0.3s ease forwards;
+        }
+        
+        .dropdown li:hover .sub-dropdown,
+        .dropdown li:focus-within .sub-dropdown {
+            display: block;
+        }
+        
+        @keyframes fadeInDropdown {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero {
+            background: #f8f9fa;
+            padding: 4rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards 0.3s;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: #7c3aed;
+            color: #fff;
+            border: 2px solid #7c3aed;
+        }
+        
+        .btn-primary:hover {
+            background: #6d28d9;
+        }
+        
+        .btn-outline {
+            background: #fff;
+            color: #7c3aed;
+            border: 2px solid #7c3aed;
+        }
+        
+        .btn-outline:hover {
+            background: #7c3aed;
+            color: #fff;
+        }
+        
+        .products {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards 0.6s;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+        
+        .section-subtitle {
+            color: #666;
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .product-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+        
+        .product-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .product-header {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .product-category {
+            font-size: 0.8rem;
+            color: #7c3aed;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+        
+        .product-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #000;
+        }
+        
+        .product-body {
+            padding: 1.5rem;
+        }
+        
+        .product-body p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-features li {
+            padding: 0.4rem 0;
+            color: #444;
+            font-size: 0.9rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+        
+        .product-features li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #7c3aed;
+            font-weight: bold;
+        }
+        
+        .product-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .info-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e0e6f5 100%);
+            padding: 4rem 1.5rem;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards 0.9s;
+        }
+        
+        .info-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .info-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+        
+        .info-subtitle {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+        
+        .info-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        
+        .info-card i {
+            font-size: 2rem;
+            color: #7c3aed;
+            margin-bottom: 1rem;
+        }
+        
+        .info-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.75rem;
+        }
+        
+        .info-card p {
+            color: #718096;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .info-cta {
+            margin-top: 2.5rem;
+        }
+        
+        .faq-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            background: linear-gradient(135deg, #e6f0fa 0%, #f5f7fa 100%);
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards 1.2s;
+        }
+        
+        .faq-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a202c;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2d3748;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8fafc;
+            position: relative;
+        }
+        
+        .faq-question::after {
+            content: '\25BC';
+            font-size: 0.8rem;
+            color: #7c3aed;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active::after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 1.5rem;
+            font-size: 0.95rem;
+            color: #718096;
+            line-height: 1.6;
+            display: none;
+            background: #fff;
+        }
+        
+        .faq-answer p {
+            margin: 0;
+        }
+        
+        footer {
+            background: #123;
+            color: #fff;
+            padding: 3rem 1.5rem 1.5rem;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards 1.5s;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .footer-section a:hover {
+            color: #fff;
+        }
+        
+        .payment-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            color: #fff;
+            transition: color 0.2s;
+        }
+        
+        .footer-section ul li:hover .payment-icon {
+            color: #7c3aed;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #334;
+            padding-top: 1.5rem;
+            text-align: center;
+            color: #aaa;
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            .top-bar-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .top-bar a {
+                margin: 0.2rem 0.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                border-bottom: 1px solid #e0e0e0;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li a {
+                padding: 1rem 1.5rem;
+                border-bottom: 1px solid #f5f5f5;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .dropdown {
+                position: static;
+                box-shadow: none;
+                border: none;
+                background: #f5f5f5;
+            }
+            
+            .sub-dropdown {
+                position: static;
+                background: #e5e5e5;
+                border: none;
+                box-shadow: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .faq-section {
+                padding: 2rem 1rem;
+            }
+            
+            .faq-question {
+                padding: 1rem;
+            }
+            
+            .faq-answer {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div></div>
+            <div>
+                <a href="https://billing.netherbyte.site">Client Area</a>
+                <a href="https://nether.netherbyte.site">Panel</a>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">NetherByte</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#vps">VPS</a></li>
+                <li><a href="#minecraft">Minecraft</a></li>
+                <li><a href="#dedicated">Dedicated</a></li>
+                <li><a href="#vds">VDS</a></li>
+                <li><a href="#ddos">DDoS Protection</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="https://billing.netherbyte.site/cart.php" class="nav-cta">Order Now</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Professional Hosting Solutions</h1>
+            <p>Reliable VPS, Dedicated Servers, and Minecraft hosting for your business and gaming needs.</p>
+            <div class="hero-buttons">
+                <a href="https://billing.netherbyte.site/cart.php" class="btn btn-primary">Get Started</a>
+                <a href="#products" class="btn btn-outline">View Products</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h2 class="section-title">Our Products</h2>
+        <p class="section-subtitle">Choose the right hosting solution for your needs</p>
+        
+        <div class="product-grid">
+            <div class="product-card" id="vps">
+                <div class="product-header">
+                    <div class="product-category">Virtual Servers</div>
+                    <h3>VPS Hosting</h3>
+                </div>
+                <div class="product-body">
+                    <p>Scalable virtual servers with full root access and dedicated resources.</p>
+                    <ul class="product-features">
+                        <li>Full root access</li>
+                        <li>SSD storage</li>
+                        <li>DDoS protection included</li>
+                        <li>Multiple OS options</li>
+                        <li>99.9% uptime guarantee</li>
+                    </ul>
+                    <a href="https://billing.netherbyte.site/cart.php?gid=1" class="btn btn-primary">View Plans</a>
+                </div>
+            </div>
+
+            <div class="product-card" id="minecraft">
+                <div class="product-header">
+                    <div class="product-category">Game Hosting</div>
+                    <h3>Minecraft Servers</h3>
+                </div>
+                <div class="product-body">
+                    <p>Optimized Minecraft hosting with instant setup and mod support.</p>
+                    <ul class="product-features">
+                        <li>One-click modpack install</li>
+                        <li>Automatic backups</li>
+                        <li>Full FTP access</li>
+                        <li>Plugin support</li>
+                        <li>24/7 support</li>
+                    </ul>
+                    <a href="https://billing.netherbyte.site/cart.php?gid=2" class="btn btn-primary">View Plans</a>
+                </div>
+            </div>
+
+            <div class="product-card" id="vds">
+                <div class="product-header">
+                    <div class="product-category">Virtual Dedicated</div>
+                    <h3>VDS Hosting</h3>
+                </div>
+                <div class="product-body">
+                    <p>Virtual dedicated servers with guaranteed resources and enhanced security.</p>
+                    <ul class="product-features">
+                        <li>Dedicated CPU cores</li>
+                        <li>Guaranteed RAM</li>
+                        <li>Custom OS installation</li>
+                        <li>Advanced firewall</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="https://billing.netherbyte.site/cart.php?gid=3" class="btn btn-primary">View Plans</a>
+                </div>
+            </div>
+
+            <div class="product-card" id="dedicated">
+                <div class="product-header">
+                    <div class="product-category">Bare Metal</div>
+                    <h3>Dedicated Servers</h3>
+                </div>
+                <div class="product-body">
+                    <p>Enterprise-grade dedicated servers with maximum performance.</p>
+                    <ul class="product-features">
+                        <li>Physical hardware</li>
+                        <li>High-performance CPUs</li>
+                        <li>Unlimited bandwidth</li>
+                        <li>Custom configurations</li>
+                        <li>Enterprise support</li>
+                    </ul>
+                    <a href="https://billing.netherbyte.site/cart.php?gid=4" class="btn btn-primary">View Plans</a>
+                </div>
+            </div>
+
+            <div class="product-card" id="ddos">
+                <div class="product-header">
+                    <div class="product-category">Security</div>
+                    <h3>DDoS Protection</h3>
+                </div>
+                <div class="product-body">
+                    <p>Advanced DDoS mitigation to keep your services online and secure.</p>
+                    <ul class="product-features">
+                        <li>Layer 3/4/7 protection</li>
+                        <li>Real-time monitoring</li>
+                        <li>Automatic mitigation</li>
+                        <li>Traffic analytics</li>
+                        <li>99.9% availability</li>
+                    </ul>
+                    <a href="https://billing.netherbyte.site/cart.php?gid=5" class="btn btn-primary">View Plans</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section" id="about">
+        <div class="info-content">
+            <h2 class="info-title">Why Choose NetherByte?</h2>
+            <p class="info-subtitle">Unleash Your Potential with Top-Tier Hosting</p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Blazing Performance</h3>
+                    <p>Experience lightning-fast speeds with NVMe SSDs, cutting-edge CPUs, and ultra-low latency networks.</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Rock-Solid Security</h3>
+                    <p>Enjoy peace of mind with free DDoS protection, advanced firewalls, and 24/7 monitoring.</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Expert Support</h3>
+                    <p>Get round-the-clock assistance from our dedicated team via Discord and tickets.</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Seamless Control</h3>
+                    <p>Manage your servers effortlessly with our intuitive control panel and custom configurations.</p>
+                </div>
+            </div>
+            
+            <div class="info-cta">
+                <a href="https://billing.netherbyte.site/cart.php" class="btn btn-primary">Start Hosting Today</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <div class="faq-accordion">
+            <div class="faq-item">
+                <div class="faq-question">What types of hosting do you offer?</div>
+                <div class="faq-answer"><p>We offer VPS, Dedicated Servers, VDS, Minecraft hosting, and DDoS protection tailored for gamers and developers.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is there a money-back guarantee?</div>
+                <div class="faq-answer"><p>Yes, we provide a 7-day money-back guarantee on most plans for your peace of mind.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How can I contact support?</div>
+                <div class="faq-answer"><p>You can reach us 24/7 via our Discord server or through the ticket system in your client portal.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What payment methods do you accept?</div>
+                <div class="faq-answer"><p>We accept PayPal, UPI, Visa, and Mastercard for your convenience.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#vps">VPS Hosting</a></li>
+                    <li><a href="#minecraft">Minecraft Hosting</a></li>
+                    <li><a href="#vds">VDS Hosting</a></li>
+                    <li><a href="#dedicated">Dedicated Servers</a></li>
+                    <li><a href="#ddos">DDoS Protection</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#rules">Usage Rules</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#refund">Refund Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="https://billing.netherbyte.site">Client Portal</a></li>
+                    <li><a href="https://discord.gg/bDQSrjaFrR">Discord</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms & Conditions</a></li>
+                    <li><a href="#aup">Acceptable Use</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Accepted Payment Methods</h4>
+                <ul>
+                    <li><i class="fab fa-cc-paypal payment-icon"></i>PayPal</li>
+                    <li><i class="fas fa-money-bill-wave payment-icon"></i>UPI</li>
+                    <li><i class="fab fa-cc-visa payment-icon"></i>Visa</li>
+                    <li><i class="fab fa-cc-mastercard payment-icon"></i>Mastercard</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 NetherByte Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const answer = this.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
